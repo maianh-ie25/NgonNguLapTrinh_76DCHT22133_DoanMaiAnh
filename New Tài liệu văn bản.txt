@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// CP1: Tao cau truc nhanvien
+struct NhanVien {
+    string ma_nv;
+    string ten_nv;
+    long long luong_co_ban;
+    float he_so;
+};
+
+int main() {
+    int n;
+    cout << "Nhap so luong nhan vien: ";
+    cin >> n;
+    
+    // Dung mang thuong co dinh thay vi vector
+    NhanVien ds_nv[100]; 
+    
+    // CP2: Hoan thanh nhap()
+    for(int i = 0; i < n; i++) {
+        cout << "\nNhap thong tin nhan vien thu " << i + 1 << ":" << endl;
+        cin.ignore();
+        cout << "Ma NV: "; getline(cin, ds_nv[i].ma_nv);
+        cout << "Ten NV: "; getline(cin, ds_nv[i].ten_nv);
+        cout << "Luong co ban: "; cin >> ds_nv[i].luong_co_ban;
+        cout << "He so: "; cin >> ds_nv[i].he_so;
+    }
+    
+    // CP2: Hoan thanh xuat()
+    cout << "\n--- THONG TIN NHAN VIEN ---" << endl;
+    for(int i = 0; i < n; i++) {
+        cout << "\nNhan vien thu " << i + 1 << ":" << endl;
+        cout << "Ma NV: " << ds_nv[i].ma_nv << endl;
+        cout << "Ten NV: " << ds_nv[i].ten_nv << endl;
+        cout << "Luong co ban: " << ds_nv[i].luong_co_ban << endl;
+        cout << "He so: " << ds_nv[i].he_so << endl;
+    }
+    
+    return 0;
+}
